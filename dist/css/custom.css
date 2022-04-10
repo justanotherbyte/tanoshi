@@ -1,0 +1,40 @@
+:root {
+    --ayu-dark: #1F2430;
+    --ayu-yellow: #FFCC66;
+    --ayu-matte: #545252;
+    --ayu-yellow-dark: #c49028;
+}
+
+body {
+    background-color: var(--ayu-dark);
+    font-family: 'inter';
+}
+
+
+.bg-ayu-dark {
+    background-color: var(--ayu-dark);
+}
+
+.bg-ayu-yellow {
+    background-color: var(--ayu-yellow);
+}
+.bg-ayu-yellow-dark {
+    background-color: var(--ayu-yellow-dark);
+}
+
+.font-inter {
+    font-family: 'inter';
+}
+
+.bg-matte {
+    background-color: var(--ayu-matte);
+}
+
+.text-matte {
+    color: var(--ayu-matte);
+}
+
+@font-face {
+    font-family: "inter";
+    src: url("/fonts/inter.ttf");
+}
