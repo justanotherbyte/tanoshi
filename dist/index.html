@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/custom.css">
+  <script src="js/http.js" type="module"></script>
   <script src="js/sidebar.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -123,20 +124,51 @@
         </ul>
       </div>
     </div>
-    <div class="container mx-auto py-3 md:w-4/5 w-full">
+    <div class="container py-3 w-full">
       <div class="w-full h-full rounded">
         <div class="grid grid-cols-2 h-full">
           <div id="request-maker" class="border-r border-gray-300">
-            <div class="flex p-5">
-              <input type="text" maxLength="8" placeholder="GET"
-                class="w-1/6 inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600" />
-              <input type="text" id="website-admin"
-                class="rounded-none bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="https://github.com">
-              <button
-                class="inline-flex items-center px-3 text-sm bg-ayu-yellow rounded-r-md border border-r-0 text-matte border-gray-600">
-                Send
-              </button>
+            <div class="border-b border-gray-300">
+              <div class="flex p-5">
+                <input type="text" maxLength="8" placeholder="GET"
+                  class="w-1/6 inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600" />
+                <input type="text" id="website-admin"
+                  class="rounded-none bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="https://github.com">
+                <button
+                  class="inline-flex items-center px-3 text-sm bg-ayu-yellow rounded-r-md border border-r-0 text-matte border-gray-600">
+                  Send
+                </button>
+              </div>
+            </div>
+
+            <div id="option-builders">
+              <div>
+                <h2 class="text-gray-400 text-md px-5 py-3">Query Parameters</h2>
+                <div id="query-p-builders">
+                  <div class="grid grid-cols-2 px-5">
+                    <div>
+                      <input type="text" class="border-b border-gray-400 bg-transparent focus:outline-none text-gray-400 text-sm">
+                    </div>
+                    <div>
+                      <input type="text" class="border-b border-gray-400 bg-transparent focus:outline-none text-gray-400 text-sm">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <h2 class="text-gray-400 text-md px-5 py-3">Headers</h2>
+                <div id="query-p-builders">
+                  <div class="grid grid-cols-2 px-5">
+                    <div>
+                      <input type="text" class="border-b border-gray-400 bg-transparent focus:outline-none text-gray-400 text-sm">
+                    </div>
+                    <div>
+                      <input type="text" class="border-b border-gray-400 bg-transparent focus:outline-none text-gray-400 text-sm">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div id="request-response" class="">
