@@ -130,12 +130,13 @@
           <div id="request-maker" class="border-r border-gray-300">
             <div class="border-b border-gray-300">
               <div class="flex p-5">
-                <input type="text" maxLength="8" placeholder="GET"
+                <input type="text" maxLength="8" placeholder="GET" value="GET" id="http-method-input"
                   class="w-1/6 inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600" />
-                <input type="text" id="website-admin"
+                <input type="text" id="url-input"
                   class="rounded-none bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="https://github.com">
+                  placeholder="https://github.com" value="https://github.com/justanotherbyte/tanoshi">
                 <button
+                  id="http-send-btn"
                   class="inline-flex items-center px-3 text-sm bg-ayu-yellow rounded-r-md border border-r-0 text-matte border-gray-600">
                   Send
                 </button>
@@ -173,9 +174,12 @@
           </div>
           <div id="request-response" class="">
             <div class="flex p-5">
-              <h5 class="text-gray-300 font-semibold">Status: <span class="text-emerald-500">200</span></h5>
-              <h5 class="text-gray-300 font-semibold ml-3">Size: <span class="text-emerald-500">147.95 kB</span></h5>
-              <h5 class="text-gray-300 font-semibold ml-3">Time: <span class="text-emerald-500">45ms</span></h5>
+              <h5 class="text-gray-300 font-semibold">Status: <span class="text-emerald-500" id="status-info">...</span></h5>
+              <h5 class="text-gray-300 font-semibold ml-3">Size: <span class="text-emerald-500" id="size-info">...</span></h5>
+              <h5 class="text-gray-300 font-semibold ml-3">Time: <span class="text-emerald-500" id="time-info">...</span></h5>
+            </div>
+            <div id="rendered-response" class="p-5 w-full">
+                <iframe id="rendered-response-iframe" class="w-full h-screen rounded-md" frameborder="0"></iframe>
             </div>
           </div>
         </div>
