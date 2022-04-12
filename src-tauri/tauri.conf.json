@@ -14,7 +14,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "tanoshirequesthistory",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -50,7 +50,11 @@
       "active": false
     },
     "allowlist": {
-      "all": true
+      "all": true,
+      "fs": {
+          "all": true,
+          "scope": ["$APP/*", "$APP/", "$APP"]
+      }
     },
     "windows": [
       {

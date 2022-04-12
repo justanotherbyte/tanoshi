@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="css/custom.css">
   <script src="js/http.js" type="module"></script>
   <script src="js/sidebar.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/store.js" type="module" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -19,11 +21,11 @@
       class="w-72 absolute sm:relative bg-transparent shadow h-screen flex-col justify-between hidden sm:flex border-r bordery-gray-300">
       <div class="">
         <div class="px-3">
-          <button class="bg-ayu-yellow p-1 rounded-lg text-sm w-full mt-3 text-matte">New Request</button>
+          <button class="bg-ayu-yellow p-1 rounded-lg text-sm w-full mt-3 text-matte" id="new-request-btn">New Request</button>
         </div>
 
         <h2 class="text-lg text-white font-bold text-center mt-2">History</h2>
-        <ul class="mt-7">
+        <ul class="mt-7" id="history-sidebar">
           <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center">
             <div class="w-full border-t border-b border-gray-300 py-3 px-2">
               <h3 class="text-white bg-blue-500 text-xs font-bold py-1 px-2 rounded-md w-1/5 text-center">GET</h3>
@@ -79,11 +81,11 @@
       </button>
       <div class="">
         <div class="px-3">
-          <button class="bg-ayu-yellow p-1 rounded-lg text-sm w-full mt-3 text-matte">New Request</button>
+          <button class="bg-ayu-yellow p-1 rounded-lg text-sm w-full mt-3 text-matte" id="mobile-new-request-btn">New Request</button>
         </div>
 
         <h2 class="text-lg text-white font-bold text-center mt-2">History</h2>
-        <ul class="mt-7">
+        <ul class="mt-7" id="mobile-history-sidebar">
           <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center">
             <div class="w-full border-t border-b border-gray-300 py-3 px-2">
               <h3 class="text-white bg-blue-500 text-xs font-bold py-1 px-2 rounded-md w-1/4 text-center">GET</h3>
@@ -145,26 +147,32 @@
 
             <div id="option-builders">
               <div>
-                <h2 class="text-gray-400 text-md px-5 py-3">Query Parameters</h2>
+                <div class="flex px-5 mt-5">
+                    <h2 class="text-gray-400 text-md">Query Parameters</h2>
+                    <button class="bg-teal-500 text-xs p-1 rounded-md ml-3 text-white" id="add-query-pair-btn">Add Row</button>
+                </div>
                 <div id="query-p-builders">
-                  <div class="grid grid-cols-2 px-5">
-                    <div>
+                  <div class="grid grid-cols-2 px-5" id="query-builder-grid">
+                    <div id="query-name-list">
                       <input type="text" class="border-b border-gray-400 bg-transparent focus:outline-none text-gray-400 text-sm">
                     </div>
-                    <div>
+                    <div id="query-value-list">
                       <input type="text" class="border-b border-gray-400 bg-transparent focus:outline-none text-gray-400 text-sm">
                     </div>
                   </div>
                 </div>
               </div>
               <div class="mt-4">
-                <h2 class="text-gray-400 text-md px-5 py-3">Headers</h2>
+                <div class="flex px-5 mt-5">
+                    <h2 class="text-gray-400 text-md">Headers</h2>
+                    <button class="bg-teal-500 text-xs p-1 rounded-md ml-3 text-white" id="add-header-pair-btn">Add Row</button>
+                </div>
                 <div id="query-p-builders">
                   <div class="grid grid-cols-2 px-5">
-                    <div>
+                    <div id="header-name-list">
                       <input type="text" class="border-b border-gray-400 bg-transparent focus:outline-none text-gray-400 text-sm">
                     </div>
-                    <div>
+                    <div id="header-value-list">
                       <input type="text" class="border-b border-gray-400 bg-transparent focus:outline-none text-gray-400 text-sm">
                     </div>
                   </div>
@@ -186,6 +194,7 @@
       </div>
     </div>
   </div>
+  
 </body>
 
 </html>
